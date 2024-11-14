@@ -2,7 +2,11 @@ import streamlit as st
 import requests
 from datetime import datetime
 import time
+import subprocess  # Import subprocess to run the command script
 from load_balancer_least_connections import LoadBalancerLeastConnections  # Import the new load balancer
+
+# Automatically run the run_servers.cmd script
+subprocess.Popen(['cmd.exe', '/c', 'run_servers.cmd'], shell=True)
 
 # URLs for each instance type with network topology visualization
 DATABASE_SERVER_URLS = ["http://localhost:8502", "http://localhost:8503", "http://localhost:8504"]
